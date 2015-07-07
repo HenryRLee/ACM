@@ -1,3 +1,5 @@
+#include "../header.h"
+
 void didj(vvi grid, int n, int m)
 {
 	int di[] = {1, 0, -1, 0};

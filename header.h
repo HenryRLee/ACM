@@ -30,11 +30,15 @@ using namespace std;
 #define sqr(x)	((x)*(x))
 
 typedef long long ll;
+typedef unsigned int ui;
+typedef unsigned long long ull;
 typedef vector <int> vi;
 typedef vector <ll> vl;
 typedef vector <vi> vvi;
 typedef vector <vl> vvl;
 typedef pair <int, int> pii;
+typedef vector <pii> vp;
+typedef vector <vp> vvp;
 
 inline bool cbound(int x, int b, int e)
 {
@@ -61,4 +65,6 @@ inline double getdouble()
 	cin >> a;
 	return a;
 }
+
+
 
