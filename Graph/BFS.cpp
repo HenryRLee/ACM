@@ -1,13 +1,13 @@
 #include "../header.h"
 
-int BFSList(vvi list, int src, int dst)
+int BFSList(vvi adjlist, int src, int dst)
 {
 	vi seen;
 	vi dist;
 	queue <int> q;
 
-	seen.resize(list.sz);
-	dist.resize(list.sz);
+	seen.resize(adjlist.sz);
+	dist.resize(adjlist.sz);
 
 	seen[src] = 1;
 	dist[src] = 0;
@@ -20,9 +20,9 @@ int BFSList(vvi list, int src, int dst)
 		u = q.front();
 		q.pop();
 
-		fio(list[u].sz)
+		fio(adjlist[u].sz)
 		{
-			int v = list[u][i];
+			int v = adjlist[u][i];
 
 			if (seen[v] == 0)
 			{

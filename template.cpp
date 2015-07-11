@@ -5,6 +5,7 @@
 #include <string>
 #include <queue>
 #include <stack>
+#include <list>
 #include <set>
 #include <stdio.h>
 #include <math.h>
