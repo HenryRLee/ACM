@@ -4,8 +4,6 @@ int DFSListOne(vvi adjlist, int src, int dst)
 {
 	stack <int> st;
 	vi seen;
-	int time = 0;
-	bool cyclic = false;
 
 	seen.resize(adjlist.sz);
 
@@ -107,8 +105,6 @@ int DFSListForrest(vvi adjlist)
 					{
 						/* Cyclic */
 						cyclic = true;
-
-						return -1;
 					}
 				}
 			}

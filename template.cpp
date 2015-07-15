@@ -15,6 +15,7 @@
 using namespace std;
 
 #define fl(i, b, e)		for (int i=(int)(b); i<(int)(e); i++)
+#define fld(i, b, e)		for (int i=(int)(b)-1; i>=(int)(e); i--)
 #define flo(i, e)		fl(i, 0, e)
 #define fi(b, e)	fl(i, b, e)
 #define fio(e)	fi(0, e)
@@ -22,6 +23,8 @@ using namespace std;
 #define fjo(e)	fj(0, e)
 #define fk(b, e)	fl(k, b, e)
 #define fko(e)	fk(0, e)
+#define fvi(i, v)	fl(i, 0, v.size())
+#define fvd(i, v)	fld(i, v.size(), 0)
 #define pb	push_back
 #define sz	size()
 #define mp	make_pair
@@ -29,6 +32,7 @@ using namespace std;
 #define sd	second
 #define all(x)	(x).begin(), (x).end()
 #define sqr(x)	((x)*(x))
+#define newline		printf("\n")
 
 typedef long long ll;
 typedef unsigned int ui;
