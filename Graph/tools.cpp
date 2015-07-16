@@ -20,6 +20,27 @@ vvi MatrixToList(vvi matrix)
 	return adjlist;
 }
 
+vvp MatrixToWeightedList(vvi matrix)
+{
+	vvp adjlist;
+
+	adjlist.resize(matrix.sz);
+
+	fio(matrix.sz)
+	{
+		fjo(matrix[i].sz)
+		{
+			if (matrix[i][j] > 0)
+			{
+				int w = matrix[i][j];
+				adjlist[i].pb(mp(j, w));
+			}
+		}
+	}
+
+	return adjlist;
+}
+
 void PrintList(vvi adjlist)
 {
 	cout << "Adjlist" << endl;
