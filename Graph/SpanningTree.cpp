@@ -1,19 +1,19 @@
 #include "../header.h"
 
 
-vp PrimList(vvp adjlist, int r = 0)
+vvp PrimList(vvp adjlist, int r = 0)
 {
-	const int inf = 2e31-1;
 	set <pii> q;
 	vi intree;
 	vi key;
 	vi parent;
 	ll wsum = 0;
-	vp ret;
+	vvp ret;
 
 	intree.resize(adjlist.sz);
 	key.resize(adjlist.sz);
 	parent.resize(adjlist.sz);
+	ret.resize(adjlist.sz);
 
 	fio(adjlist.sz)
 	{
@@ -35,8 +35,10 @@ vp PrimList(vvp adjlist, int r = 0)
 		pii top = *q.begin();
 		int u;
 		int p;
+		int w;
 		q.erase(q.begin());
 
+		w = top.fs;
 		u = top.sd;
 
 		intree[u] = 1;
@@ -45,13 +47,13 @@ vp PrimList(vvp adjlist, int r = 0)
 
 		if (p != -1)
 		{
-			ret.pb(mp(p, u));
-			wsum += top.fs;
+			ret[p].pb(mp(u, w));
+			wsum += w;
 		}
 		else if (u != r)
 		{
 			/* Not connected */
-			vp empty;
+			vvp empty;
 
 			wsum = 0;
 			return empty;

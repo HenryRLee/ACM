@@ -45,6 +45,8 @@ typedef pair <int, int> pii;
 typedef vector <pii> vp;
 typedef vector <vp> vvp;
 
+const int inf = 2147483647;
+
 inline bool cbound(int x, int b, int e)
 {
 	return ((x >= b) && (x <= e));
