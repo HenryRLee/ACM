@@ -55,3 +55,18 @@ void PrintList(vvi adjlist)
 	}
 	cout << endl;
 }
+
+void PrintWeightedList(vvp adjlist)
+{
+	cout << "Adjlist" << endl;
+	fio(adjlist.sz)
+	{
+		cout << "[" << i << "] ";
+		fjo(adjlist[i].sz)
+		{
+			printf("%d(%d) ", adjlist[i][j].fs, adjlist[i][j].sd);
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
