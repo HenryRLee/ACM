@@ -73,4 +73,19 @@ inline double getdouble()
 	return a;
 }
 
+template <class T>
+inline void debugv(vector <T> v)
+{
+	fio(v.sz)
+		cout << v[i] << " ";
+	cout << endl;
+}
+
+template <class T>
+inline void debugvv(vector < vector <T> > vv)
+{
+	fio(vv.sz)
+		debugv(vv[i]);
+	cout << endl;
+}
 
