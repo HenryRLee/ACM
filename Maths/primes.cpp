@@ -30,3 +30,37 @@ vi sieve(int max = 1000*1000)
 	return v;
 }
 
+vi prime_representation(ll num, const vi &sv)
+{
+	vi primes(sv.sz, 0);
+
+	if (num <= 1)
+		return primes;
+
+	fio(sv.sz)
+	{
+		while (num % sv[i] == 0)
+		{
+			primes[i]++;
+			num /= sv[i];
+		}
+
+		if (i > num)
+			break;
+	}
+
+	return primes;
+}
+
+ll ndivisors(ll num, const vi &sv)
+{
+	vi primes = prime_representation(num, sv);
+	ll product = 1;
+
+	fio(primes.sz)
+		product *= (primes[i] + 1);
+
+	return product;
+}
+
+
