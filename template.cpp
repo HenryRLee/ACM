@@ -77,7 +77,10 @@ template <class T>
 inline void debugv(vector <T> v)
 {
 	fio(v.sz)
+	{
+		printf("(%d)", i);
 		cout << v[i] << " ";
+	}
 	cout << endl;
 }
 
@@ -85,9 +88,13 @@ template <class T>
 inline void debugvv(vector < vector <T> > vv)
 {
 	fio(vv.sz)
+	{
+		printf("[%d]", i);
 		debugv(vv[i]);
+	}
 	cout << endl;
 }
+
 
 int main(void)
 {
