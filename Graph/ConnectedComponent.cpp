@@ -123,6 +123,40 @@ vvi SCCList(vvi adjlist)
 	return ret;
 }
 
+vvi MapSCC(vvi adjlist)
+{
+	vvi retlist;
+	vvi scc = SCCList(adjlist);
+
+	vi vmap(adjlist.sz);
+
+	retlist.resize(scc.sz);
+
+	fio(scc.sz)
+	{
+		fjo(scc[i].sz)
+		{
+			int v = scc[i][j];
+
+			vmap[v] = i;
+		}
+	}
+
+	fio(adjlist.sz)
+	{
+		fjo(adjlist[i].sz)
+		{
+			int u = vmap[i];
+			int v = vmap[adjlist[i][j]];
+
+			if (u != v)
+				retlist[u].pb(v);
+		}
+	}
+
+	return retlist;
+}
+
 vvi WCCList(vvi adjlist)
 {
 	vi seen;
@@ -179,3 +213,5 @@ vvi WCCList(vvi adjlist)
 
 	return ret;
 }
+
+
