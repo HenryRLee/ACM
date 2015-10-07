@@ -4,7 +4,7 @@
  * Bellman Ford
  * Return with a shortest-path tree
  */
-vvp BellmanFordList(vvp adjlist, int src = 0)
+vvp BellmanFordList(const vvp &adjlist, int src = 0)
 {
 	vi d(adjlist.sz, 1e9);
 	vi p(adjlist.sz, -1);
@@ -71,7 +71,7 @@ vvp BellmanFordList(vvp adjlist, int src = 0)
  * Dijkstra
  * Return with a shortest-path tree
  */
-vvp DijkstraList(vvp adjlist, int src = 0)
+vvp DijkstraList(const vvp &adjlist, int src = 0)
 {
 	vi key(adjlist.sz, inf);
 	vi parent(adjlist.sz, -1);

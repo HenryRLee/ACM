@@ -1,6 +1,6 @@
 #include "../header.h"
 
-int DFSListOne(vvi adjlist, int src, int dst)
+int DFSListOne(const vvi &adjlist, int src, int dst)
 {
 	stack <int> st;
 	vi seen;
@@ -49,16 +49,21 @@ int DFSListOne(vvi adjlist, int src, int dst)
 	return 0;
 }
 
-int DFSListForrest(vvi adjlist)
+int DFSListForrest(const vvi &adjlist)
 {
 	vi disc;
 	vi fin;
+	vi parent;
 	stack <int> st; 
 	bool cyclic = false;
 	int time = 0;
 
 	disc.resize(adjlist.sz);
 	fin.resize(adjlist.sz);
+	parent.resize(adjlist.sz);
+
+	fio(adjlist.sz)
+		parent[i] = -1;
 
 	fio(adjlist.sz)
 	{
@@ -96,10 +101,15 @@ int DFSListForrest(vvi adjlist)
 				{
 					int v = adjlist[u][j];
 
+					/* Comment this out if it's a directed graph */
+					if (parent[u] == v)
+						continue;
+
 					if (disc[v] == 0)
 					{
 						/* Not discovered */
 						st.push(v);
+						parent[v] = u;
 					}
 					else if (fin[v] == 0)
 					{
@@ -114,7 +124,7 @@ int DFSListForrest(vvi adjlist)
 	return 0;
 }
 
-list <int> TopologicalSort(vvi adjlist)
+list <int> TopologicalSort(const vvi &adjlist)
 {
 	vi disc;
 	vi fin;

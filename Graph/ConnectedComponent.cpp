@@ -1,6 +1,6 @@
 #include "../header.h"
 
-vvi SCCList(vvi adjlist)
+vvi SCCList(const vvi &adjlist)
 {
 	vi disc;
 	vi fin;
@@ -123,7 +123,7 @@ vvi SCCList(vvi adjlist)
 	return ret;
 }
 
-vvi MapSCC(vvi adjlist)
+vvi MapSCC(const vvi &adjlist)
 {
 	vvi retlist;
 	vvi scc = SCCList(adjlist);

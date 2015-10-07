@@ -1,6 +1,6 @@
 #include "../header.h"
 
-vvi MatrixToList(vvi matrix)
+vvi MatrixToList(const vvi &matrix)
 {
 	vvi adjlist;
 
@@ -20,7 +20,7 @@ vvi MatrixToList(vvi matrix)
 	return adjlist;
 }
 
-vvp MatrixToWeightedList(vvi matrix)
+vvp MatrixToWeightedList(const vvi &matrix)
 {
 	vvp adjlist;
 
@@ -41,7 +41,7 @@ vvp MatrixToWeightedList(vvi matrix)
 	return adjlist;
 }
 
-void PrintList(vvi adjlist)
+void PrintList(const vvi &adjlist)
 {
 	cout << "Adjlist" << endl;
 	fio(adjlist.sz)
@@ -56,7 +56,7 @@ void PrintList(vvi adjlist)
 	cout << endl;
 }
 
-void PrintWeightedList(vvp adjlist)
+void PrintWeightedList(const vvp &adjlist)
 {
 	cout << "Adjlist" << endl;
 	fio(adjlist.sz)

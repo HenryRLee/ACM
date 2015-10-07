@@ -4,7 +4,7 @@
  * Prim
  * Return with a shortest-path tree
  */
-vvp PrimList(vvp adjlist, int r = 0)
+vvp PrimList(const vvp &adjlist, int r = 0)
 {
 	set <pii> q;
 	vi intree;

@@ -1,6 +1,6 @@
 #include "../header.h"
 
-ll MaxFlowMatrix(vvl &matrix, int src, int dst)
+ll MaxFlowMatrixBFS(vvl &matrix, int src, int dst)
 {
 	vi seen;
 	vi parent;
@@ -70,4 +70,16 @@ ll MaxFlowMatrix(vvl &matrix, int src, int dst)
 	}
 
 	return 0;
+}
+
+ll MaxFlowMatrix(const vvl &matrix, int src, int dst)
+{
+	ll maxflow = 0;
+	ll flow;
+	vvl matrixcopy = matrix;
+
+	while ((flow = MaxFlowMatrixBFS(matrixcopy, src, dst)) > 0)
+		maxflow += flow;
+
+	return maxflow;
 }

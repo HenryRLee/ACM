@@ -1,6 +1,6 @@
 #include "../header.h"
 
-int BFSList(vvi adjlist, int src, int dst)
+int BFSList(const vvi &adjlist, int src, int dst)
 {
 	vi seen;
 	vi dist;
@@ -47,7 +47,7 @@ int BFSList(vvi adjlist, int src, int dst)
 	return 0;
 }
 
-int BFSMatrix(vvi matrix, int src, int dst)
+int BFSMatrix(const vvi &matrix, int src, int dst)
 {
 	vi seen;
 	vi dist;
