@@ -123,6 +123,9 @@ vvi SCCList(const vvi &adjlist)
 	return ret;
 }
 
+/*
+ * Merge a SCC into a vertice
+ */
 vvi MapSCC(const vvi &adjlist)
 {
 	vvi retlist;
