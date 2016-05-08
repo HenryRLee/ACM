@@ -6,7 +6,7 @@ int congruence(int a, int b, int d)
 	if (a == 1)
 		return b;
 
-	fi(1, a+1)
+	fio(a+1)
 	{
 		if ((d * i + b) % a == 0)
 			return (d * i + b) / a;
