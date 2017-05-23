@@ -70,8 +70,9 @@ vvp BellmanFordList(const vvp &adjlist, int src = 0)
 /*
  * Dijkstra
  * Return with a shortest-path tree
+ * Using a set data structure
  */
-vvp DijkstraList(const vvp &adjlist, int src = 0)
+vvp DijkstraListWithSet(const vvp &adjlist, int src = 0)
 {
 	vi key(adjlist.sz, inf);
 	vi parent(adjlist.sz, -1);
@@ -130,4 +131,38 @@ vvp DijkstraList(const vvp &adjlist, int src = 0)
 	}
 
 	return ret;
+}
+
+int DijkstraList(const vvp & adjlist, int src, int dst)
+{
+	int n = adjlist.sz;
+	vi dist(n, inf);
+	priority_queue <pii, vp, greater<pii> > q;
+
+	dist[src] = 0;
+	q.push(mp(0, src));
+
+	fio(n-1)
+	{
+		if (q.empty())
+			break;
+
+		int key = q.top().fs;
+		int u = q.top().sd;
+		q.pop();
+
+		fjo(adjlist[u].sz)
+		{
+			int v = adjlist[u][j].fs;
+			int c = adjlist[u][j].sd;
+
+			if (c + key < dist[v])
+			{
+				dist[v] = c + key;
+				q.push(mp(dist[v], v));
+			}
+		}
+	}
+
+	return dist[dst];
 }

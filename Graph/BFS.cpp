@@ -69,7 +69,7 @@ int BFSMatrix(const vvi &matrix, int src, int dst)
 
 		flo(v, matrix[u].sz)
 		{
-			if (matrix[u][v] == 1)
+			if (matrix[u][v] > 0)
 			{
 				if (seen[v] == 0)
 				{

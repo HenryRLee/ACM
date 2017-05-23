@@ -19,7 +19,8 @@ bool check(ll x, const vi &array)
 		return false;
 }
 
-ll bsearch(ll minx, ll maxx, const vi &array)
+template <class ...Args>
+ll bsearch(ll minx, ll maxx, Args&& ... args)
 {
 	ll l = minx;
 	ll r = maxx;
@@ -28,13 +29,13 @@ ll bsearch(ll minx, ll maxx, const vi &array)
 	{
 		ll mid = (l + r) / 2;
 
-		if (check(mid, array))
+		if (check(mid, forward<Args>(args)...))
 			l = mid + 1;
 		else
 			r = mid - 1;
 	}
 
-	if (check(l, array))
+	if (check(l, forward<Args>(args)...))
 		return l;
 	else
 		return (l - 1);

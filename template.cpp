@@ -32,6 +32,7 @@ using namespace std;
 #define sd	second
 #define all(x)	(x).begin(), (x).end()
 #define sqr(x)	((x)*(x))
+#define bc(x) __builtin_popcount(x)
 #define newline		printf("\n")
 
 typedef long long ll;
@@ -95,6 +96,10 @@ inline void debugvv(vector < vector <T> > vv)
 	cout << endl;
 }
 
+inline void msg(string str)
+{
+	cout << "=== " + str + " ===" << endl;
+}
 
 int main(void)
 {
